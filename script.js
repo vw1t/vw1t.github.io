@@ -68,7 +68,6 @@ window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clien
 function drawParticles() {
   ctx.clearRect(0, 0, W, H);
   particles.forEach(p => {
-    // Drift toward mouse slightly
     const dxM = mouseX - p.x, dyM = mouseY - p.y;
     const dist = Math.sqrt(dxM * dxM + dyM * dyM);
     if (dist < 200) {
@@ -86,7 +85,6 @@ function drawParticles() {
     ctx.fillStyle = p.color + p.alpha + ')';
     ctx.fill();
   });
-  // Draw connecting lines
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x;
@@ -114,11 +112,11 @@ window.addEventListener('scroll', () => {
 
 // ─── TYPING ANIMATION ─────────────────────────
 const phrases = [
-  'Пишу интерфейсы, которые работают.',
+  'Building interfaces that work.',
   'HTML · CSS · JavaScript',
-  'Адаптивные & красивые сайты.',
-  'Открыт к новым проектам.',
-  'Жду именно тебя! 🚀'
+  'Responsive & beautiful websites.',
+  'Open to new projects.',
+  'Let\'s build something great 🚀'
 ];
 let phraseIdx = 0, charIdx = 0, deleting = false;
 const typedEl = document.getElementById('typed-text');
