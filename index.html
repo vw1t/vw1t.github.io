@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vw1t — Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Canvas for particle bg -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <span class="nav-logo">vw<span class="accent">1</span>t</span>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>available for work</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line" data-text="Frontend">Frontend</span>
+        <span class="line accent-line" data-text="Developer">Developer</span>
+      </h1>
+
+      <p class="hero-sub">
+        <span id="typed-text"></span><span class="caret">|</span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://github.com/vw1t" target="_blank" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-ring ring2"></div>
+      <img
+        src="https://avatars.githubusercontent.com/vw1t"
+        alt="vw1t avatar"
+        class="hero-avatar"
+        id="avatar"
+      />
+      <div class="avatar-glow"></div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">01 / about</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">Строю <span class="accent">веб</span><br/>что цепляет</h2>
+          <p>Пишу чистый, быстрый и красивый фронтенд. Люблю когда код элегантен, а интерфейс отзывчив. Каждый проект — это возможность удивить пользователя.</p>
+          <p>Работаю с HTML, CSS и JavaScript. Умею превратить идею в рабочий продукт с нуля.</p>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-num" data-target="4">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="100">0</span>
+            <span class="stat-label">% Passion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label">02 / projects</div>
+      <h2 class="section-title reveal">Мои <span class="accent">работы</span></h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal" data-delay="0">
+          <div class="card-top">
+            <span class="card-lang html">HTML</span>
+            <span class="card-tag">Public</span>
+          </div>
+          <h3 class="card-title">coffee-landing</h3>
+          <p class="card-desc">Адаптивный лендинг для кафе с чистым дизайном и интерактивными элементами.</p>
+          <div class="card-stack">HTML · CSS · JS</div>
+          <a href="https://github.com/vw1t/coffee-landing" target="_blank" class="card-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-delay="100">
+          <div class="card-top">
+            <span class="card-lang html">HTML</span>
+            <span class="card-tag">Public</span>
+          </div>
+          <h3 class="card-title">tech-portfolio</h3>
+          <p class="card-desc">Простой бизнес-сайт для IT-компании с интерактивностью на Vanilla JS.</p>
+          <div class="card-stack">HTML · CSS · JS</div>
+          <a href="https://github.com/vw1t/tech-portfolio" target="_blank" class="card-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-delay="200">
+          <div class="card-top">
+            <span class="card-lang html">HTML</span>
+            <span class="card-tag">Public</span>
+          </div>
+          <h3 class="card-title">coffee-calculator</h3>
+          <p class="card-desc">Интерактивный калькулятор заказа кофе с динамическим ценообразованием.</p>
+          <div class="card-stack">HTML · CSS · JS</div>
+          <a href="https://github.com/vw1t/coffee-calculator" target="_blank" class="card-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-delay="300">
+          <div class="card-top">
+            <span class="card-lang css">CSS</span>
+            <span class="card-tag">Public</span>
+          </div>
+          <h3 class="card-title">wagon13-restaurant</h3>
+          <p class="card-desc">Современный адаптивный сайт ресторана с динамическим меню и интерактивным UI.</p>
+          <div class="card-stack">HTML · CSS · JS</div>
+          <a href="https://github.com/vw1t/wagon13-restaurant" target="_blank" class="card-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </article>
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label">03 / skills</div>
+      <h2 class="section-title reveal">Мой <span class="accent">стек</span></h2>
+
+      <div class="skills-grid reveal">
+        <div class="skill-item" style="--i:0">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          </div>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item" style="--i:1">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>
+          </div>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item" style="--i:2">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </div>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item" style="--i:3">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <span>Git / GitHub</span>
+        </div>
+        <div class="skill-item" style="--i:4">
+          <div class="skill-icon">📐</div>
+          <span>Responsive Design</span>
+        </div>
+        <div class="skill-item" style="--i:5">
+          <div class="skill-icon">✨</div>
+          <span>UI / UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">04 / contact</div>
+      <div class="contact-inner reveal">
+        <h2 class="section-title">Давай <span class="accent">работать</span><br/>вместе</h2>
+        <p class="contact-sub">Открыт к новым проектам и сотрудничеству. Пиши — отвечу быстро.</p>
+        <div class="contact-links">
+          <a href="https://github.com/vw1t" target="_blank" class="contact-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2025 vw1t — built with ❤️ & vanilla JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
