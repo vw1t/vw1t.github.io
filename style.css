@@ -365,7 +365,6 @@ a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%, -50%) sca
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto;
   gap: 1.5rem;
   margin-top: 3rem;
 }
